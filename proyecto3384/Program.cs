@@ -15,7 +15,8 @@ namespace proyecto3384
 
         static void MostrarMenu()
         {
-            Console.WriteLine("=== MENÚ PRINCIPAL ===");
+            Console.WriteLine("Bienvenido al sistema de operaciones básicas");
+            Console.WriteLine("Seleccione una opción del menú:"); 
             Console.WriteLine("1. Sumar");
             Console.WriteLine("2. Restar");
             Console.WriteLine("3. Multiplicar");
