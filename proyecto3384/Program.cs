@@ -27,9 +27,11 @@ namespace proyecto3384
             switch (opcion)
             {
                 case "1": Sumar(); break;
-                case "2": Restar(); break;
-                case "3": Multiplicar(); break; 
+                case "2": Restar(); break; 
+                case "3": Multiplicar(); break;
+
                 case "4": Dividir(); break;
+
                 case "5": Salir(); break;
                 default: Console.WriteLine("Opción inválida"); break;
             }
