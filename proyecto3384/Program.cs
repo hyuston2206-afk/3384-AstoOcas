@@ -131,7 +131,18 @@ namespace proyecto3384
 
         static void Salir()
         {
-            Console.WriteLine("Gracias por usar el programa.");
+            Console.Write("¿Está seguro que desea salir? (s/n): ");
+            string respuesta = Console.ReadLine().ToLower();
+
+            if (respuesta == "s")
+            {
+                Console.WriteLine("Gracias por usar el programa.");
+            }
+            else
+            {
+                MostrarMenu();
+            }
         }
+
     }
 }
