@@ -104,9 +104,19 @@ namespace proyecto3384
         static void Dividir()
         {
             Console.Write("Ingrese el numerador: ");
-            int a = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int a))
+            {
+                Console.WriteLine("Entrada inválida. Debe ingresar un número.");
+                return;
+            }
+
             Console.Write("Ingrese el denominador: ");
-            int b = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int b))
+            {
+                Console.WriteLine("Entrada inválida. Debe ingresar un número.");
+                return;
+            }
+
             if (b == 0)
             {
                 Console.WriteLine("No se puede dividir entre cero.");
@@ -116,6 +126,8 @@ namespace proyecto3384
                 Console.WriteLine($"Resultado: {a / b}");
             }
         }
+
+
 
         static void Salir()
         {
