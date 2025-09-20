@@ -64,11 +64,22 @@ namespace proyecto3384
         static void Restar()
         {
             Console.Write("Ingrese el primer número: ");
-            int a = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int a))
+            {
+                Console.WriteLine("Entrada inválida. Debe ingresar un número.");
+                return;
+            }
+
             Console.Write("Ingrese el segundo número: ");
-            int b = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out int b))
+            {
+                Console.WriteLine("Entrada inválida. Debe ingresar un número.");
+                return;
+            }
+
             Console.WriteLine($"Resultado: {a - b}");
         }
+
 
         static void Multiplicar()
         {
