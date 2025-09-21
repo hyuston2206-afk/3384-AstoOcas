@@ -82,6 +82,17 @@ def redondear():
         print("Error: Ingrese un valor numérico válido.")
 
 
+def menor():
+    try:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = min(a, b)
+        print(f"El menor es: {resultado}")
+    except ValueError:
+        print("Error: Ingrese valores numéricos válidos.")
+
+
+
 
 
 def mostrar_menu():
