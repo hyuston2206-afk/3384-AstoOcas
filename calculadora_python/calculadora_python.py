@@ -1,226 +1,199 @@
-def sumar():
+
+# -*- coding: utf-8 -*-
+import math
+import random
+from datetime import datetime
+
+def guardar_historial(operacion, resultado):
     try:
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = a + b
-        print(f"Resultado: {resultado}")
-    except ValueError:
-        print("Error: Ingrese valores numéricos válidos.")
+        with open("historial.txt", "a", encoding="utf-8") as archivo:
+            tiempo = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            archivo.write(f"[{tiempo}] {operacion}: {resultado}\n")
+    except Exception as e:
+        print(f"Error al guardar el historial: {e}")
+
+def pedir_numero(mensaje):
+    while True:
+        try:
+            return float(input(mensaje))
+        except ValueError:
+            print("Entrada invalida. Intente de nuevo.")
+
+def sumar():
+    a = pedir_numero("Ingrese el primer numero: ")
+    b = pedir_numero("Ingrese el segundo numero: ")
+    resultado = a + b
+    print(f"Resultado: {resultado}")
+    guardar_historial("Suma", resultado)
 
 def restar():
-    try:
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = a - b
-        print(f"Resultado: {resultado}")
-    except ValueError:
-        print("Error: Ingrese valores numéricos válidos.")
-
+    a = pedir_numero("Ingrese el primer numero: ")
+    b = pedir_numero("Ingrese el segundo numero: ")
+    resultado = a - b
+    print(f"Resultado: {resultado}")
+    guardar_historial("Resta", resultado)
 
 def multiplicar():
-    try:
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = a * b
-        print(f"Resultado: {resultado}")
-    except ValueError:
-        print("Error: Ingrese valores numéricos válidos.")
-
+    a = pedir_numero("Ingrese el primer numero: ")
+    b = pedir_numero("Ingrese el segundo numero: ")
+    resultado = a * b
+    print(f"Resultado: {resultado}")
+    guardar_historial("Multiplicacion", resultado)
 
 def dividir():
-    try:
-        a = float(input("Ingrese el numerador: "))
-        b = float(input("Ingrese el denominador: "))
-        if b == 0:
-            print("Error: No se puede dividir entre cero.")
-        else:
-            resultado = a / b
-            print(f"Resultado: {resultado}")
-    except ValueError:
-        print("Error: Ingrese valores numéricos válidos.")
-
+    a = pedir_numero("Ingrese el numerador: ")
+    b = pedir_numero("Ingrese el denominador: ")
+    if b == 0:
+        print("Error: No se puede dividir entre cero.")
+    else:
+        resultado = a / b
+        print(f"Resultado: {resultado}")
+        guardar_historial("Division", resultado)
 
 def potencia():
-    try:
-        base = float(input("Ingrese la base: "))
-        exponente = float(input("Ingrese el exponente: "))
-        resultado = base ** exponente
-        print(f"Resultado: {resultado}")
-    except ValueError:
-        print("Error: Ingrese valores numéricos válidos.")
-
-
-import math
+    base = pedir_numero("Ingrese la base: ")
+    exponente = pedir_numero("Ingrese el exponente: ")
+    resultado = base ** exponente
+    print(f"Resultado: {resultado}")
+    guardar_historial("Potencia", resultado)
 
 def raiz_cuadrada():
-    try:
-        numero = float(input("Ingrese el número: "))
-        if numero < 0:
-            print("Error: No se puede calcular la raíz cuadrada de un número negativo.")
-        else:
-            resultado = math.sqrt(numero)
-            print(f"Resultado: {resultado}")
-    except ValueError: 
-        print("Error: Ingrese un valor numérico válido.")
-
+    numero = pedir_numero("Ingrese el numero: ")
+    if numero < 0:
+        print("Error: No se puede calcular la raiz cuadrada de un numero negativo.")
+    else:
+        resultado = math.sqrt(numero)
+        print(f"Resultado: {resultado}")
+        guardar_historial("Raiz cuadrada", resultado)
 
 def modulo():
-    try:
-        numero = float(input("Ingrese el número: "))
-        resultado = abs(numero)
-        print(f"Resultado: {resultado}")
-    except ValueError:
-        print("Error: Ingrese un valor numérico válido.")
+    numero = pedir_numero("Ingrese el numero: ")
+    resultado = abs(numero)
+    print(f"Resultado: {resultado}")
+    guardar_historial("Modulo", resultado)
 
-      
 def redondear():
-    try:
-        numero = float(input("Ingrese el número: "))
-        resultado = round(numero)
-        print(f"Resultado: {resultado}")
-    except ValueError:
-        print("Error: Ingrese un valor numérico válido.")
-
+    numero = pedir_numero("Ingrese el numero: ")
+    resultado = round(numero)
+    print(f"Resultado: {resultado}")
+    guardar_historial("Redondeo", resultado)
 
 def menor():
-    try:
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = min(a, b)
-        print(f"El menor es: {resultado}")
-    except ValueError:
-        print("Error: Ingrese valores numéricos válidos.")
-
+    a = pedir_numero("Ingrese el primer numero: ")
+    b = pedir_numero("Ingrese el segundo numero: ")
+    resultado = min(a, b)
+    print(f"El menor es: {resultado}")
+    guardar_historial("Menor", resultado)
 
 def mayor():
-    try:
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = max(a, b)
-        print(f"El mayor es: {resultado}")
-    except ValueError:
-        print("Error: Ingrese valores numéricos válidos.")
-
+    a = pedir_numero("Ingrese el primer numero: ")
+    b = pedir_numero("Ingrese el segundo numero: ")
+    resultado = max(a, b)
+    print(f"El mayor es: {resultado}")
+    guardar_historial("Mayor", resultado)
 
 def promedio():
-    try:
-        a = float(input("Ingrese el primer número: "))
-        b = float(input("Ingrese el segundo número: "))
-        resultado = (a + b) / 2
-        print(f"El promedio es: {resultado}")
-    except ValueError:
-        print("Error: Ingrese valores numéricos válidos.")
-
-
+    a = pedir_numero("Ingrese el primer numero: ")
+    b = pedir_numero("Ingrese el segundo numero: ")
+    resultado = (a + b) / 2
+    print(f"El promedio es: {resultado}")
+    guardar_historial("Promedio", resultado)
 
 def factorial():
-    try:
-        numero = int(input("Ingrese un número entero no negativo: "))
-        if numero < 0:
-            print("Error: No se puede calcular el factorial de un número negativo.")
-        else:
-            resultado = math.factorial(numero)
-            print(f"Resultado: {resultado}")
-    except ValueError:
-        print("Error: Ingrese un número entero válido.")
-
-
-import random
-
+    while True:
+        try:
+            numero = int(input("Ingrese un numero entero no negativo: "))
+            if numero < 0:
+                print("Error: No se puede calcular el factorial de un numero negativo.")
+            else:
+                resultado = math.factorial(numero)
+                print(f"Resultado: {resultado}")
+                guardar_historial("Factorial", resultado)
+                break
+        except ValueError:
+            print("Entrada invalida. Intente de nuevo.")
 
 def numero_aleatorio():
-    try:
-        minimo = int(input("Ingrese el valor mínimo: "))
-        maximo = int(input("Ingrese el valor máximo: "))
-        if minimo > maximo:
-            print("Error: El mínimo no puede ser mayor que el máximo.")
-        else:
-            resultado = random.randint(minimo, maximo)
-            print(f"Número aleatorio generado: {resultado}")
-    except ValueError:
-        print("Error: Ingrese números enteros válidos.")
-
+    while True:
+        try:
+            minimo = int(input("Ingrese el valor minimo: "))
+            maximo = int(input("Ingrese el valor maximo: "))
+            if minimo > maximo:
+                print("Error: El minimo no puede ser mayor que el maximo.")
+            else:
+                resultado = random.randint(minimo, maximo)
+                print(f"Numero aleatorio generado: {resultado}")
+                guardar_historial("Numero aleatorio", resultado)
+                break
+        except ValueError:
+            print("Entrada invalida. Intente de nuevo.")
 
 def convertir_grados():
-    try:
-        opcion = input("¿Desea convertir a (C)elsius o (F)ahrenheit?: ").strip().upper()
-        temperatura = float(input("Ingrese la temperatura: "))
-        
-        if opcion == "C":
-            resultado = (temperatura - 32) * 5 / 9
-            print(f"{temperatura}°F son {resultado:.2f}°C")
-        elif opcion == "F":
-            resultado = (temperatura * 9 / 5) + 32
-            print(f"{temperatura}°C son {resultado:.2f}°F")
-        else:
-            print("Opción inválida. Use 'C' o 'F'.")
-    except ValueError:
-        print("Error: Ingrese una temperatura válida.")
-
-
+    opcion = input("Desea convertir a (C)elsius o (F)ahrenheit?: ").strip().upper()
+    temperatura = pedir_numero("Ingrese la temperatura: ")
+    if opcion == "C":
+        resultado = (temperatura - 32) * 5 / 9
+        print(f"{temperatura}°F son {resultado:.2f}°C")
+        guardar_historial("Fahrenheit a Celsius", resultado)
+    elif opcion == "F":
+        resultado = (temperatura * 9 / 5) + 32
+        print(f"{temperatura}°C son {resultado:.2f}°F")
+        guardar_historial("Celsius a Fahrenheit", resultado)
+    else:
+        print("Opcion invalida. Use 'C' o 'F'.")
 
 def mostrar_menu():
-    print("\n Bienvenido al sistema de operaciones matemáticas ")
-    print("Seleccione una opción:")
-    print("1) Factorial")
-    print("2) Número aleatorio")
-    print("3) Conversión de grados")
-    print("4) Salir")
+    print("\n--- Calculadora Matematica ---")
+    print("1) Sumar")
+    print("2) Restar")
+    print("3) Multiplicar")
+    print("4) Dividir")
+    print("5) Potencia")
+    print("6) Raiz cuadrada")
+    print("7) Modulo")
+    print("8) Redondear")
+    print("9) Menor")
+    print("10) Mayor")
+    print("11) Promedio")
+    print("12) Factorial")
+    print("13) Numero aleatorio")
+    print("14) Conversion de grados")
+    print("15) Salir")
 
+def ejecutar_opcion(opcion):
+    funciones = {
+        1: sumar,
+        2: restar,
+        3: multiplicar,
+        4: dividir,
+        5: potencia,
+        6: raiz_cuadrada,
+        7: modulo,
+        8: redondear,
+        9: menor,
+        10: mayor,
+        11: promedio,
+        12: factorial,
+        13: numero_aleatorio,
+        14: convertir_grados
+    }
+    funcion = funciones.get(opcion)
+    if funcion:
+        funcion()
+    elif opcion == 15:
+        print("Gracias por usar la calculadora.")
+        exit()
+    else:
+        print("Opcion invalida. Intente de nuevo.")
+
+while True:
+    mostrar_menu()
     try:
-        opcion = int(input("Ingrese el número de la opción: "))
-        if opcion == 1:
-            numero = int(input("Ingrese un número entero: "))
-            factorial(numero)
-        elif opcion == 2:
-            numero_aleatorio()
-        elif opcion == 3:
-            convertir_grados()
-        elif opcion == 4:
-            print("¡Gracias por usar el sistema! ")
-        else:
-            print("Opción inválida. Por favor, ingrese un número entre 1 y 4.")
+        opcion = int(input("Seleccione una opcion (1-15): "))
+        ejecutar_opcion(opcion)
     except ValueError:
-        print("Error: Ingrese un número válido.")
-
-
-
-
-
-def mostrar_menu():
-    print("=" * 40)
-    print("  Bienvenido al sistema de operaciones")
-    print("=" * 40)
-    print("1. Sumar")
-    print("2. Restar")
-    print("3. Multiplicar")
-    print("4. Dividir")
-    print("5. Salir")
-    print("=" * 40)
-
-def main():
-
-    continuar = True
-    while continuar:
-        mostrar_menu()
-        opcion = input("Seleccione una opción: ")
-        if opcion == "1":
-            sumar()
-        elif opcion == "2":
-            restar()
-        elif opcion == "3":
-            multiplicar()
-        elif opcion == "4":
-            dividir()
-        elif opcion == "5":
-            print("Programa finalizado.")
-            continuar = False
-        else:
-            print("Opción inválida")
-
-if __name__ == "__main__":
-    main()
-
-
-
-
+        print("Entrada invalida. Ingrese un numero del 1 al 15.")
+    continuar = input("Desea realizar otra operacion? (s/n): ").strip().lower()
+    if continuar != "s":
+        print("Hasta luego.")
+        break
