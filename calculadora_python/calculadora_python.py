@@ -64,6 +64,16 @@ def raiz_cuadrada():
         print("Error: Ingrese un valor numérico válido.")
 
 
+def modulo():
+    try:
+        numero = float(input("Ingrese el número: "))
+        resultado = abs(numero)
+        print(f"Resultado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese un valor numérico válido.")
+
+
+
 
 def mostrar_menu():
     print("=" * 40)
