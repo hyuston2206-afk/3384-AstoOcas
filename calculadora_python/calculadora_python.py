@@ -141,6 +141,24 @@ def numero_aleatorio():
         print("Error: Ingrese números enteros válidos.")
 
 
+def convertir_grados():
+    try:
+        opcion = input("¿Desea convertir a (C)elsius o (F)ahrenheit?: ").strip().upper()
+        temperatura = float(input("Ingrese la temperatura: "))
+        
+        if opcion == "C":
+            resultado = (temperatura - 32) * 5 / 9
+            print(f"{temperatura}°F son {resultado:.2f}°C")
+        elif opcion == "F":
+            resultado = (temperatura * 9 / 5) + 32
+            print(f"{temperatura}°C son {resultado:.2f}°F")
+        else:
+            print("Opción inválida. Use 'C' o 'F'.")
+    except ValueError:
+        print("Error: Ingrese una temperatura válida.")
+
+
+
 
 
 def mostrar_menu():
