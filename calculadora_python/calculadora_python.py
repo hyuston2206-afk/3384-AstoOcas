@@ -7,6 +7,25 @@ def sumar():
     except ValueError:
         print("Error: Ingrese valores numéricos válidos.")
 
+def restar():
+    try:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = a - b
+        print(f"Resultado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese valores numéricos válidos.")
+
+        x
+def multiplicar():
+    try:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = a * b
+        print(f"Resultado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese valores numéricos válidos.")
+
 
 def mostrar_menu():
     print("=" * 40)
