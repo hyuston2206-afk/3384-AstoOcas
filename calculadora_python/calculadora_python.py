@@ -16,7 +16,7 @@ def restar():
     except ValueError:
         print("Error: Ingrese valores numéricos válidos.")
 
-        x
+
 def multiplicar():
     try:
         a = float(input("Ingrese el primer número: "))
@@ -25,6 +25,20 @@ def multiplicar():
         print(f"Resultado: {resultado}")
     except ValueError:
         print("Error: Ingrese valores numéricos válidos.")
+
+
+def dividir():
+    try:
+        a = float(input("Ingrese el numerador: "))
+        b = float(input("Ingrese el denominador: "))
+        if b == 0:
+            print("Error: No se puede dividir entre cero.")
+        else:
+            resultado = a / b
+            print(f"Resultado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese valores numéricos válidos.")
+
 
 
 def mostrar_menu():
