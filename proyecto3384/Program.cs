@@ -10,8 +10,21 @@ namespace proyecto3384
     {
         static void Main(string[] args)
         {
-            MostrarMenu();
+            bool continuar = true;
+
+            while (continuar)
+            {
+                MostrarMenu();
+                Console.Write("¿Desea realizar otra operación? (s/n): ");
+                string respuesta = Console.ReadLine().ToLower();
+                if (respuesta != "s")
+                {
+                    continuar = false;
+                    Console.WriteLine("Programa finalizado.");
+                }
+            }
         }
+
 
         static void MostrarMenu()
         {
