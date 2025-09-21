@@ -60,7 +60,7 @@ def raiz_cuadrada():
         else:
             resultado = math.sqrt(numero)
             print(f"Resultado: {resultado}")
-    except ValueError:
+    except ValueError: 
         print("Error: Ingrese un valor numérico válido.")
 
 
@@ -68,6 +68,15 @@ def modulo():
     try:
         numero = float(input("Ingrese el número: "))
         resultado = abs(numero)
+        print(f"Resultado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese un valor numérico válido.")
+
+      
+def redondear():
+    try:
+        numero = float(input("Ingrese el número: "))
+        resultado = round(numero)
         print(f"Resultado: {resultado}")
     except ValueError:
         print("Error: Ingrese un valor numérico válido.")
