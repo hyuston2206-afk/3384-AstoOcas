@@ -1,3 +1,13 @@
+def sumar():
+    try:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = a + b
+        print(f"Resultado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese valores numéricos válidos.")
+
+
 def mostrar_menu():
     print("=" * 40)
     print("  Bienvenido al sistema de operaciones")
@@ -10,6 +20,7 @@ def mostrar_menu():
     print("=" * 40)
 
 def main():
+
     continuar = True
     while continuar:
         mostrar_menu()

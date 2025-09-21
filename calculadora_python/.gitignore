@@ -1,0 +1,6 @@
+.vs/
+*.vsidx
+*.user
+*.suo
+__pycache__/
+*.pyc
