@@ -40,6 +40,15 @@ def dividir():
         print("Error: Ingrese valores numéricos válidos.")
 
 
+def potencia():
+    try:
+        base = float(input("Ingrese la base: "))
+        exponente = float(input("Ingrese el exponente: "))
+        resultado = base ** exponente
+        print(f"Resultado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese valores numéricos válidos.")
+
 
 def mostrar_menu():
     print("=" * 40)
