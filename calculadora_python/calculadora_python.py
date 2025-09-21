@@ -113,6 +113,19 @@ def promedio():
 
 
 
+def factorial():
+    try:
+        numero = int(input("Ingrese un número entero no negativo: "))
+        if numero < 0:
+            print("Error: No se puede calcular el factorial de un número negativo.")
+        else:
+            resultado = math.factorial(numero)
+            print(f"Resultado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese un número entero válido.")
+
+
+
 
 
 def mostrar_menu():
