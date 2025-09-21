@@ -92,6 +92,26 @@ def menor():
         print("Error: Ingrese valores numéricos válidos.")
 
 
+def mayor():
+    try:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = max(a, b)
+        print(f"El mayor es: {resultado}")
+    except ValueError:
+        print("Error: Ingrese valores numéricos válidos.")
+
+
+def promedio():
+    try:
+        a = float(input("Ingrese el primer número: "))
+        b = float(input("Ingrese el segundo número: "))
+        resultado = (a + b) / 2
+        print(f"El promedio es: {resultado}")
+    except ValueError:
+        print("Error: Ingrese valores numéricos válidos.")
+
+
 
 
 
