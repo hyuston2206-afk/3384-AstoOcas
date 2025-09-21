@@ -125,6 +125,21 @@ def factorial():
         print("Error: Ingrese un número entero válido.")
 
 
+import random
+
+
+def numero_aleatorio():
+    try:
+        minimo = int(input("Ingrese el valor mínimo: "))
+        maximo = int(input("Ingrese el valor máximo: "))
+        if minimo > maximo:
+            print("Error: El mínimo no puede ser mayor que el máximo.")
+        else:
+            resultado = random.randint(minimo, maximo)
+            print(f"Número aleatorio generado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese números enteros válidos.")
+
 
 
 
