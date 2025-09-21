@@ -159,6 +159,32 @@ def convertir_grados():
 
 
 
+def mostrar_menu():
+    print("\n Bienvenido al sistema de operaciones matemáticas ")
+    print("Seleccione una opción:")
+    print("1) Factorial")
+    print("2) Número aleatorio")
+    print("3) Conversión de grados")
+    print("4) Salir")
+
+    try:
+        opcion = int(input("Ingrese el número de la opción: "))
+        if opcion == 1:
+            numero = int(input("Ingrese un número entero: "))
+            factorial(numero)
+        elif opcion == 2:
+            numero_aleatorio()
+        elif opcion == 3:
+            convertir_grados()
+        elif opcion == 4:
+            print("¡Gracias por usar el sistema! ")
+        else:
+            print("Opción inválida. Por favor, ingrese un número entre 1 y 4.")
+    except ValueError:
+        print("Error: Ingrese un número válido.")
+
+
+
 
 
 def mostrar_menu():
