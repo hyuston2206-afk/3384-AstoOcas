@@ -50,6 +50,21 @@ def potencia():
         print("Error: Ingrese valores numéricos válidos.")
 
 
+import math
+
+def raiz_cuadrada():
+    try:
+        numero = float(input("Ingrese el número: "))
+        if numero < 0:
+            print("Error: No se puede calcular la raíz cuadrada de un número negativo.")
+        else:
+            resultado = math.sqrt(numero)
+            print(f"Resultado: {resultado}")
+    except ValueError:
+        print("Error: Ingrese un valor numérico válido.")
+
+
+
 def mostrar_menu():
     print("=" * 40)
     print("  Bienvenido al sistema de operaciones")
