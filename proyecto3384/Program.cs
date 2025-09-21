@@ -28,13 +28,16 @@ namespace proyecto3384
 
         static void MostrarMenu()
         {
-            Console.WriteLine("Bienvenido al sistema de operaciones básicas");
-            Console.WriteLine("Seleccione una opción del menú:"); 
+            Console.Clear();
+            Console.WriteLine("======================================");
+            Console.WriteLine("  Bienvenido al sistema de operaciones");
+            Console.WriteLine("======================================");
             Console.WriteLine("1. Sumar");
             Console.WriteLine("2. Restar");
             Console.WriteLine("3. Multiplicar");
             Console.WriteLine("4. Dividir");
             Console.WriteLine("5. Salir");
+            Console.WriteLine("======================================");
             Console.Write("Seleccione una opción: ");
             string opcion = Console.ReadLine();
 
@@ -42,16 +45,13 @@ namespace proyecto3384
             {
                 case "1": Sumar(); break;
                 case "2": Restar(); break;
-                    
                 case "3": Multiplicar(); break;
-
                 case "4": Dividir(); break;
-
                 case "5": Salir(); break;
-
                 default: Console.WriteLine("Opción inválida"); break;
             }
         }
+
 
         static void Sumar()
         {
